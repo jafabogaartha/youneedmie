@@ -2,161 +2,502 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You Need Mie</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Need Mie</title>
 
-  <!-- Meta SEO -->
-  <meta name="description"
-    content="You Need Mie - Paket usaha mie kekinian dengan rasa autentik dan harga terjangkau. Cocok untuk bisnis kuliner anak muda.">
-  <meta name="keywords"
-    content="You Need Mie, mie kekinian, usaha mie, franchise mie, bisnis kuliner, mie murah enak">
-  <meta name="author" content="CV Maha Niaga Artha">
+    <!-- Meta SEO -->
+    <meta name="description"
+        content="You Need Mie - Paket usaha mie kekinian dengan rasa autentik dan harga terjangkau. Cocok untuk bisnis kuliner anak muda.">
+    <meta name="keywords"
+        content="You Need Mie, mie kekinian, usaha mie, franchise mie, bisnis kuliner, mie murah enak">
+    <meta name="author" content="CV Maha Niaga Artha">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="You Need Mie">
-  <meta property="og:description" content="Paket usaha mie kekinian dengan rasa autentik dan harga terjangkau.">
-  <meta property="og:image" content="assets/slidefoto/FOTO3.png">
-  <meta property="og:type" content="website">
+    <!-- Open Graph (Facebook, WhatsApp, dll) -->
+    <meta property="og:title" content="You Need Mie">
+    <meta property="og:description" content="Paket usaha mie kekinian dengan rasa autentik dan harga terjangkau.">
+    <meta property="og:image" content="assets/slidefoto/FOTO3.png">
+    <meta property="og:type" content="website">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="You Need Mie">
-  <meta name="twitter:description" content="Paket usaha mie kekinian dengan rasa autentik dan harga terjangkau.">
-  <meta name="twitter:image" content="assets/slidefoto/FOTO3.png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="You Need Mie">
+    <meta name="twitter:description" content="Paket usaha mie kekinian dengan rasa autentik dan harga terjangkau.">
+    <meta name="twitter:image" content="assets/slidefoto/FOTO3.png">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-    rel="stylesheet">
+    <!-- Google Fonts: Poppins untuk tampilan yang lebih modern -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --primary-color: #3ce73c;
-      --primary-dark: #10e722;
-      --text-light: #fefefe;
-      --text-dark: #333;
-      --bg-light: #fff;
-      --shadow-light: rgba(0, 0, 0, 0.1);
-      --shadow-medium: rgba(231, 76, 60, 0.4);
-      --shadow-strong: rgba(231, 76, 60, 0.6);
-      --border-radius-large: 20px;
-    }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <style>
+        /* CSS Variables for easy theming */
+        :root {
+            --primary-color: #3ce73c;
+            --primary-dark: #10e722;
+            --secondary-dark: #a93226;
+            --text-light: #fefefe;
+            --text-dark: #333;
+            --text-medium: #666;
+            --bg-light: #fff;
+            --bg-dark: #000;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(231, 76, 60, 0.4);
+            --shadow-strong: rgba(231, 76, 60, 0.6);
+            --border-radius-small: 10px;
+            --border-radius-medium: 15px;
+            --border-radius-large: 20px;
+        }
 
-    body {
-      background: var(--bg-light);
-      font-family: 'Poppins', Arial, sans-serif;
-      color: var(--text-dark);
-    }
+        /* Global Reset & Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-    .image-stack-wrapper {
-      width: 100%;
-      margin: 0 auto;
-      max-width: 450px;
-      background: var(--bg-light);
-      box-shadow: 0 0 20px var(--shadow-light);
-    }
+        body {
+            background: var(--bg-light);
+            overflow-x: hidden;
+            font-family: 'Poppins', Arial, sans-serif;
+            color: var(--text-dark);
+            user-select: none;
+            -webkit-user-select: none;
+        }
 
-    .image-stack-wrapper img {
-      width: 100%;
-      height: auto;
-      display: block;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-      background-color: #f0f0f0;
-    }
+        * {
+            -webkit-user-drag: none;
+            user-drag: none;
+        }
 
-    .image-stack-wrapper img.loaded {
-      opacity: 1;
-      background-color: transparent;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .floating-button {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: calc(100% - 40px);
-      max-width: 350px;
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-      color: var(--text-light);
-      border: none;
-      border-radius: var(--border-radius-large);
-      padding: 12px 20px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 8px 25px var(--shadow-medium);
-      transition: all 0.3s ease;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      height: 52px;
-      text-decoration: none;
-    }
+        /* Main Container for all images and slideshows */
+        .image-stack-wrapper {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 450px;
+            background: var(--bg-light);
+            box-shadow: 0 0 20px var(--shadow-light);
+        }
 
-    .floating-button:hover {
-      transform: translateX(-50%) translateY(-3px);
-      box-shadow: 0 12px 35px var(--shadow-strong);
-    }
+        /* Default style for all images inside the wrapper */
+        .image-stack-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            pointer-events: none;
+            /* PENTING: Aturan ini membuat gambar tidak terlihat (transparan) saat pertama kali dimuat */
+            opacity: 0;
+            /* Transisi agar munculnya gambar terlihat mulus */
+            transition: opacity 0.5s ease-in-out;
+            /* Warna placeholder saat gambar sedang dimuat */
+            background-color: #f0f0f0;
+        }
 
-    /* Iframe Form Style */
-    .form-container {
-      width: 100%;
-      max-width: 800px;
-      margin: 40px auto;
-      box-shadow: 0 0 25px var(--shadow-light);
-      border-radius: 15px;
-      overflow: hidden;
-    }
+        /* PENTING: Class .loaded akan ditambahkan oleh JavaScript setelah gambar berhasil dimuat */
+        .image-stack-wrapper img.loaded {
+            /* Aturan ini membuat gambar menjadi terlihat */
+            opacity: 1;
+            background-color: transparent;
+        }
+        
+        /* <<< PENAMBAHAN CSS UNTUK IFRAME >>> */
+        .form-iframe-container {
+            width: 100%;
+            /* Atur tinggi form sesuai kebutuhan, bisa diubah */
+            height: 800px; 
+        }
+        
+        .form-iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Menghilangkan border pada iframe */
+            display: block;
+        }
+        /* <<< AKHIR PENAMBAHAN CSS >>> */
 
-    .form-container iframe {
-      width: 100%;
-      height: 1000px;
-      border: none;
-    }
-  </style>
+
+        /* Floating Button Styles */
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            max-width: 350px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--text-light);
+            border: none;
+            border-radius: var(--border-radius-large);
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 8px 25px var(--shadow-medium);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            height: 52px;
+            text-decoration: none;
+        }
+
+        .floating-button:hover {
+            transform: translateX(-50%) translateY(-3px);
+            box-shadow: 0 12px 35px var(--shadow-strong);
+        }
+
+        .floating-button:active {
+            transform: translateX(-50%) scale(0.98);
+        }
+
+        .whatsapp-icon {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        /* Media query untuk desktop */
+        @media (min-width: 768px) {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background-color: #f5f7fa;
+            }
+
+            .image-stack-wrapper {
+                margin: 0;
+                box-shadow: 0 0 30px var(--shadow-light);
+            }
+        }
+
+        /* Slideshow Container Styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slideshow-container .mySlides {
+            display: none;
+            width: 100%;
+            animation: fadeEffect 1.5s;
+        }
+
+        .slideshow-container .mySlides img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0.4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Sembunyikan tombol & dots untuk slideshow1 */
+        #slideshow1 .prev,
+        #slideshow1 .next,
+        #slideshow1 .dot-container {
+            display: none;
+        }
+
+        /* Tombol Slideshow yang Lebih Baik (untuk slideshow2) */
+        .slideshow-container .prev,
+        .slideshow-container .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            color: var(--text-light);
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            border: none;
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .slideshow-container:hover .prev,
+        .slideshow-container:hover .next {
+            opacity: 0.7;
+        }
+
+        .slideshow-container .prev {
+            left: 10px;
+        }
+
+        .slideshow-container .next {
+            right: 10px;
+        }
+
+        .slideshow-container .prev:hover,
+        .slideshow-container .next:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 1;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slideshow-container .prev:active,
+        .slideshow-container .next:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .slideshow-arrow {
+            fill: currentColor;
+            width: 1em;
+            height: 1em;
+        }
+
+        /* Dots/bullets/indicators */
+        .dot-container {
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 5px;
+            width: 100%;
+            z-index: 5;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 0 4px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .dot.active,
+        .dot:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+            border-color: transparent;
+        }
+    </style>
 </head>
 
 <body>
 
-  <div class="image-stack-wrapper">
-    <img id="img1" src="assets/1.png" alt="Gambar Pembuka Landing Page">
-    <!-- ... semua gambar/slide tetap sama ... -->
-  </div>
+    <div class="image-stack-wrapper">
+        <img id="img1" src="assets/1.png" alt="Gambar Pembuka Landing Page" fetchpriority="high">
 
-  <!-- 🔥 Form dari subdomain dimasukkan dengan iframe -->
-  <div class="form-container">
-    <iframe src="https://paketkemitraan.biz.id/public/youneedmie" title="Form Pendaftaran You Need Mie"></iframe>
-  </div>
+        <div class="slideshow-container" id="slideshow1">
+            <div class="mySlides"><img src="assets/slidefoto/FOTO1.png" alt="Penawaran Spesial 1"></div>
+            <div class="mySlides"><img src="assets/slidefoto/FOTO2.png" alt="Penawaran Spesial 2"></div>
+            <div class="mySlides"><img src="assets/slidefoto/FOTO3.png" alt="Penawaran Spesial 3"></div>
+        </div>
 
-  <a href="https://paketkemitraan.biz.id/public/youneedmie" target="_blank" rel="noopener noreferrer"
-    class="floating-button">
-    Konsultasi Gratis
-  </a>
+        <img src="assets/3.png" alt="Gambar Detail Produk 1" loading="lazy">
+        <img src="assets/4.png" alt="Gambar Detail Produk 2" loading="lazy">
+        <img src="assets/5.png" alt="Gambar Detail Produk 3" loading="lazy">
+        <img src="assets/6.png" alt="Gambar Detail Produk 4" loading="lazy">
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const imagesToLoad = document.querySelectorAll('.image-stack-wrapper img');
-      imagesToLoad.forEach(img => {
-        if (img.complete) {
-          img.classList.add('loaded');
-        } else {
-          img.addEventListener('load', () => img.classList.add('loaded'));
-        }
-      });
-    });
-  </script>
+        <div class="slideshow-container" id="slideshow2">
+            <div class="mySlides"><img src="assets/slide/1. Kontainer.png" alt="Paket Kontainer"></div>
+            <div class="mySlides"><img src="assets/slide/2. Platinum.png" alt="Paket Platinum"></div>
+            <div class="mySlides"><img src="assets/slide/3. Reguler.png" alt="Paket Reguler"></div>
+            <div class="mySlides"><img src="assets/slide/4. Koper.png" alt="Paket Portable Koper"></div>
+            <div class="mySlides"><img src="assets/slide/5. Portable.png" alt="Paket Portable"></div>
+            <div class="mySlides"><img src="assets/slide/6. Hemat.png" alt="Paket Hemat"></div>
+
+            <button class="prev" aria-label="Paket sebelumnya" onclick="plusSlides(2, -1)">
+                <svg class="slideshow-arrow" viewBox="0 0 24 24">
+                    <path d="M15 19L8 12L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button class="next" aria-label="Paket berikutnya" onclick="plusSlides(2, 1)">
+                <svg class="slideshow-arrow" viewBox="0 0 24 24">
+                    <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="dot-container" id="dots2"></div>
+        </div>
+
+        <img src="assets/8.png" alt="Gambar Penutup Informasi 1" loading="lazy">
+        <img src="assets/10.png" alt="Gambar Penutup Informasi 2" loading="lazy">
+        <img src="assets/11.png" alt="Gambar Penutup Informasi 3" loading="lazy">
+        <img src="assets/12.png" alt="Gambar Penutup Informasi 4" loading="lazy">
+        <img src="assets/13.png" alt="Gambar Penutup Informasi 5" loading="lazy">
+        <img src="assets/14.png" alt="Gambar Penutup Informasi 6" loading="lazy">
+        <img src="assets/15.png" alt="Gambar Penutup Informasi 7" loading="lazy">
+        
+        <!-- ======================================================= -->
+        <!-- ============ AWAL BAGIAN IFRAME FORMULIR ============ -->
+        <!-- ======================================================= -->
+        <div class="form-iframe-container">
+            <iframe
+                src="https://paketkemitraan.biz.id/public/youneedmie"
+                title="Formulir Pendaftaran Kemitraan You Need Mie"
+                loading="lazy">
+            </iframe>
+        </div>
+        <!-- ======================================================= -->
+        <!-- ============= AKHIR BAGIAN IFRAME FORMULIR ============ -->
+        <!-- ======================================================= -->
+
+    </div> <!-- Akhir dari image-stack-wrapper -->
+
+    <!-- Tombol ini sengaja di luar .image-stack-wrapper agar bisa 'fixed' -->
+    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20paket%20kemitraan%20You%20Need%20Mie." target="_blank" rel="noopener noreferrer"
+        class="floating-button" aria-label="Pesan sekarang melalui WhatsApp">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.484 3.488" />
+        </svg>
+        Konsultasi Gratis
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // --- Logika untuk menampilkan semua gambar ---
+            const imagesToLoad = document.querySelectorAll('.image-stack-wrapper img');
+
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        // Cukup tambahkan class 'loaded', browser akan handle loading src
+                        img.classList.add('loaded');
+                        observer.unobserve(img); // Stop observing once loaded
+                    }
+                });
+            }, { rootMargin: '100px 0px' }); // Load gambar 100px sebelum masuk viewport
+
+            imagesToLoad.forEach(img => {
+                // Untuk gambar pertama, jangan tunggu scroll. Langsung tampilkan.
+                if (img.id === 'img1') {
+                    // Cek jika gambar sudah di-cache oleh browser
+                    if (img.complete) {
+                        img.classList.add('loaded');
+                    } else {
+                        // Tambahkan event listener untuk menampilkannya setelah selesai dimuat
+                        img.addEventListener('load', () => img.classList.add('loaded'));
+                    }
+                } else {
+                    // Untuk gambar lainnya, gunakan IntersectionObserver (lazy load)
+                    imageObserver.observe(img);
+                }
+            });
+
+            // --- Logika Slideshow ---
+            const slideshows = {
+                1: { container: document.getElementById('slideshow1'), index: 1, timer: null, interval: 5000 },
+                2: { container: document.getElementById('slideshow2'), index: 1, timer: null, interval: 5000 }
+            };
+
+            function setupSlideshow(num) {
+                const s = slideshows[num];
+                if (!s || !s.container) return;
+
+                s.slides = s.container.getElementsByClassName('mySlides');
+                if (s.slides.length === 0) return;
+
+                // Setup dots jika ada container-nya
+                const dotsContainer = s.container.querySelector('.dot-container');
+                if (dotsContainer) {
+                    dotsContainer.innerHTML = ''; // Kosongkan dulu
+                    for (let i = 0; i < s.slides.length; i++) {
+                        const dot = document.createElement('span');
+                        dot.classList.add('dot');
+                        dot.setAttribute('aria-label', `Pergi ke slide ${i + 1}`);
+                        dot.onclick = () => currentSlide(num, i + 1);
+                        dotsContainer.appendChild(dot);
+                    }
+                    s.dots = dotsContainer.getElementsByClassName('dot');
+                }
+
+                showSlides(num);
+                startAutoSlide(num);
+
+                s.container.addEventListener('mouseenter', () => stopAutoSlide(num));
+                s.container.addEventListener('mouseleave', () => startAutoSlide(num));
+            }
+
+            function showSlides(num, n) {
+                const s = slideshows[num];
+                if (!s || s.slides.length === 0) return;
+
+                if (n !== undefined) s.index = n;
+                if (s.index > s.slides.length) s.index = 1;
+                if (s.index < 1) s.index = s.slides.length;
+
+                for (let i = 0; i < s.slides.length; i++) {
+                    s.slides[i].style.display = 'none';
+                }
+                if (s.dots) {
+                    for (let i = 0; i < s.dots.length; i++) {
+                        s.dots[i].classList.remove('active');
+                    }
+                }
+
+                s.slides[s.index - 1].style.display = 'block';
+                if (s.dots) {
+                    s.dots[s.index - 1].classList.add('active');
+                }
+            }
+
+            function startAutoSlide(num) {
+                const s = slideshows[num];
+                if (!s || s.timer) return;
+                s.timer = setInterval(() => {
+                    s.index++;
+                    showSlides(num);
+                }, s.interval);
+            }
+
+            function stopAutoSlide(num) {
+                const s = slideshows[num];
+                if (s && s.timer) {
+                    clearInterval(s.timer);
+                    s.timer = null;
+                }
+            }
+
+            // Membuat fungsi global agar bisa dipanggil dari HTML onclick
+            window.plusSlides = (num, n) => {
+                stopAutoSlide(num);
+                showSlides(num, slideshows[num].index += n);
+            };
+
+            window.currentSlide = (num, n) => {
+                stopAutoSlide(num);
+                showSlides(num, n);
+            };
+
+            // Inisialisasi semua slideshow
+            setupSlideshow(1);
+            setupSlideshow(2);
+        });
+    </script>
 
 </body>
+
 </html>
