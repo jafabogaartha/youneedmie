@@ -27,7 +27,7 @@
 
     <!-- Google Fonts: Poppins untuk tampilan yang lebih modern -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 
@@ -171,47 +171,42 @@
 
         /* <!-- AKHIR PERUBAHAN CSS --> */
 
-        /* Floating Button Styles */
+        /* ============== AWAL PENAMBAHAN CSS UNTUK FLOATING BUTTON ============== */
         .floating-button {
             position: fixed;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             width: calc(100% - 40px);
-            max-width: 350px;
+            max-width: 400px;
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
             color: var(--text-light);
             border: none;
             border-radius: var(--border-radius-large);
             padding: 12px 20px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 8px 25px var(--shadow-medium);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            height: 52px;
             text-decoration: none;
+            text-align: center;
         }
 
         .floating-button:hover {
-            transform: translateX(-50%) translateY(-3px);
-            box-shadow: 0 12px 35px var(--shadow-strong);
+            transform: translateX(-50%) translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
         }
 
         .floating-button:active {
             transform: translateX(-50%) scale(0.98);
         }
 
-        .whatsapp-icon {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-        }
+        /* ============== AKHIR PENAMBAHAN CSS UNTUK FLOATING BUTTON ============== */
 
         @media (min-width: 768px) {
             body {
@@ -349,14 +344,16 @@
 <body>
 
     <div class="image-stack-wrapper">
-        <img id="img1" src="https://sqdasdsa.pages.dev/assets/1.png" alt="Gambar Pembuka Landing Page" fetchpriority="high">
+        <img id="img1" src="https://sqdasdsa.pages.dev/assets/1.png" alt="Gambar Pembuka Landing Page"
+            fetchpriority="high">
 
         <!-- BUTTON 1 DI ATAS GAMBAR 2 -->
         <div class="image-button-container">
             <img src="https://sqdasdsa.pages.dev/assets/2.png" alt="Gambar informasi 2" loading="lazy">
             <!-- PERUBAHAN DI SINI: Menambahkan kelas "button-style-1" -->
             <a href="#slideshow2" class="overlay-button-link button-style-1" aria-label="Tombol Aksi 1">
-                <img src="https://sqdasdsa.pages.dev/assets/button/button 1.png" class="overlay-button-img" alt="Tombol 1">
+                <img src="https://sqdasdsa.pages.dev/assets/button/button 1.png" class="overlay-button-img"
+                    alt="Tombol 1">
             </a>
         </div>
 
@@ -367,17 +364,24 @@
             <img src="https://sqdasdsa.pages.dev/assets/4.png" alt="Gambar informasi 4" loading="lazy">
             <!-- PERUBAHAN DI SINI: Menambahkan kelas "button-style-2" -->
             <a href="#slideshow2" class="overlay-button-link button-style-2" aria-label="Tombol Aksi 2">
-                <img src="https://sqdasdsa.pages.dev/assets/button/button 2.png" class="overlay-button-img" alt="Tombol 2">
+                <img src="https://sqdasdsa.pages.dev/assets/button/button 2.png" class="overlay-button-img"
+                    alt="Tombol 2">
             </a>
         </div>
 
         <div class="slideshow-container" id="slideshow2">
-            <div class="mySlides"><img src="https://sqdasdsa.pages.dev/assets/paket/paket-kontainer.png" alt="Paket Kontainer"></div>
-            <div class="mySlides"><img src="https://sqdasdsa.pages.dev/assets/paket/paket-platinum4.png" alt="Paket Platinum"></div>
-            <div class="mySlides"><img src="https://sqdasdsa.pages.dev/assets/paket/paket-reguler.png" alt="Paket Reguler"></div>
-            <div class="mySlides"><img src="https://sqdasdsa.pages.dev/assets/paket/paket-koper.png" alt="Paket Portable Koper"></div>
-            <div class="mySlides"><img src="https://sqdasdsa.pages.dev/assets/paket/paket-portable.png" alt="Paket Portable"></div>
-            <div class="mySlides"><img src="https://sqdasdsa.pages.dev/assets/paket/paket-hemat.png" alt="Paket Hemat"></div>
+            <div class="mySlides"><img src="https://sqdasdsa.pages.dev/assets/paket/paket-kontainer.png"
+                    alt="Paket Kontainer"></div>
+            <div class="mySlides"><img src="https://sqdasdsa.pages.dev/assets/paket/paket-platinum4.png"
+                    alt="Paket Platinum"></div>
+            <div class="mySlides"><img src="https://sqdasdsa.pages.dev/assets/paket/paket-reguler.png"
+                    alt="Paket Reguler"></div>
+            <div class="mySlides"><img src="https://sqdasdsa.pages.dev/assets/paket/paket-koper.png"
+                    alt="Paket Portable Koper"></div>
+            <div class="mySlides"><img src="https://sqdasdsa.pages.dev/assets/paket/paket-portable.png"
+                    alt="Paket Portable"></div>
+            <div class="mySlides"><img src="https://sqdasdsa.pages.dev/assets/paket/paket-hemat.png" alt="Paket Hemat">
+            </div>
 
             <button class="prev" aria-label="Paket sebelumnya" onclick="plusSlides(2, -1)">
                 <svg class="slideshow-arrow" viewBox="0 0 24 24">
@@ -401,7 +405,8 @@
             <img src="https://sqdasdsa.pages.dev/assets/6.png" alt="Gambar informasi 6" loading="lazy">
             <!-- PERUBAHAN DI SINI: Menambahkan kelas "button-style-3" -->
             <a href="#testimoni" class="overlay-button-link button-style-3" aria-label="Tombol Aksi 3">
-                <img src="https://sqdasdsa.pages.dev/assets/button/button 3.png" class="overlay-button-img" alt="Tombol 3">
+                <img src="https://sqdasdsa.pages.dev/assets/button/button 3.png" class="overlay-button-img"
+                    alt="Tombol 3">
             </a>
         </div>
         <div id="testimoni">
@@ -411,6 +416,13 @@
         </div>
 
     </div> <!-- Akhir dari image-stack-wrapper -->
+
+    <!-- ============== AWAL PENAMBAHAN FLOATING BUTTON ============== -->
+    <a href="https://paketkemitraan.biz.id/p/you-need-mie" class="floating-button" target="_blank"
+        rel="noopener noreferrer">
+        Hubungi Sekarang
+    </a>
+    <!-- ============== AKHIR PENAMBAHAN FLOATING BUTTON ============== -->
 
     <script>
         // TIDAK ADA PERUBAHAN PADA JAVASCRIPT
