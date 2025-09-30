@@ -113,10 +113,11 @@
             display: block;
         }
 
-        /* <!-- PERUBAHAN DI SINI: CSS UNTUK TOMBOL DI ATAS GAMBAR --> */
+        /* CSS UNTUK TOMBOL DI ATAS GAMBAR */
         .image-button-container {
             position: relative;
             width: 100%;
+            /* Pastikan line-height 0 agar tidak ada spasi ekstra di bawah gambar */
             line-height: 0;
         }
 
@@ -161,6 +162,19 @@
             max-width: 240px;
         }
 
+        /* <!-- PERUBAHAN DI SINI: CSS BARU UNTUK TOMBOL DI GAMBAR 8 --> */
+        .button-style-4 {
+            /* Ganti nilai 'bottom' ini untuk mengatur ketinggian tombol dari bawah gambar */
+            bottom: 3%;
+            width: 65%;
+            /* Atur lebar sesuai kebutuhan */
+            max-width: 300px;
+            /* Atur lebar maksimal */
+        }
+
+        /* <!-- AKHIR PERUBAHAN CSS --> */
+
+
         /* Mengembalikan style untuk gambar tombol agar bisa diklik dan selalu terlihat */
         .overlay-button-img {
             pointer-events: auto !important;
@@ -169,44 +183,7 @@
             background-color: transparent !important;
         }
 
-        /* <!-- AKHIR PERUBAHAN CSS --> */
-
-        /* ============== AWAL PENAMBAHAN CSS UNTUK FLOATING BUTTON ============== */
-        .floating-button {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: calc(100% - 40px);
-            max-width: 400px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-            color: var(--text-light);
-            border: none;
-            border-radius: var(--border-radius-large);
-            padding: 12px 20px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        .floating-button:hover {
-            transform: translateX(-50%) translateY(-5px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-        }
-
-        .floating-button:active {
-            transform: translateX(-50%) scale(0.98);
-        }
-
-        /* ============== AKHIR PENAMBAHAN CSS UNTUK FLOATING BUTTON ============== */
+        /* <!-- PERUBAHAN DI SINI: CSS FLOATING BUTTON SUDAH DIHAPUS --> */
 
         @media (min-width: 768px) {
             body {
@@ -350,7 +327,6 @@
         <!-- BUTTON 1 DI ATAS GAMBAR 2 -->
         <div class="image-button-container">
             <img src="https://sqdasdsa.pages.dev/assets/2.png" alt="Gambar informasi 2" loading="lazy">
-            <!-- PERUBAHAN DI SINI: Menambahkan kelas "button-style-1" -->
             <a href="#slideshow2" class="overlay-button-link button-style-1" aria-label="Tombol Aksi 1">
                 <img src="https://sqdasdsa.pages.dev/assets/button/button 1.png" class="overlay-button-img"
                     alt="Tombol 1">
@@ -362,7 +338,6 @@
         <!-- BUTTON 2 DI ATAS GAMBAR 4 -->
         <div class="image-button-container">
             <img src="https://sqdasdsa.pages.dev/assets/4.png" alt="Gambar informasi 4" loading="lazy">
-            <!-- PERUBAHAN DI SINI: Menambahkan kelas "button-style-2" -->
             <a href="#slideshow2" class="overlay-button-link button-style-2" aria-label="Tombol Aksi 2">
                 <img src="https://sqdasdsa.pages.dev/assets/button/button 2.png" class="overlay-button-img"
                     alt="Tombol 2">
@@ -403,7 +378,6 @@
         <!-- BUTTON 3 DI ATAS GAMBAR 6 -->
         <div class="image-button-container">
             <img src="https://sqdasdsa.pages.dev/assets/6.png" alt="Gambar informasi 6" loading="lazy">
-            <!-- PERUBAHAN DI SINI: Menambahkan kelas "button-style-3" -->
             <a href="#testimoni" class="overlay-button-link button-style-3" aria-label="Tombol Aksi 3">
                 <img src="https://sqdasdsa.pages.dev/assets/button/button 3.png" class="overlay-button-img"
                     alt="Tombol 3">
@@ -411,18 +385,29 @@
         </div>
         <div id="testimoni">
             <img src="https://sqdasdsa.pages.dev/assets/7.png" alt="Gambar informasi 7" loading="lazy">
-            <img src="https://sqdasdsa.pages.dev/assets/8.png" alt="Gambar informasi 8" loading="lazy">
+
+            <!-- ======================= PERUBAHAN DI SINI ======================= -->
+            <!-- Gambar 8.png sekarang dibungkus dengan container agar tombol bisa diletakkan di depannya -->
+            <div class="image-button-container">
+                <img src="https://sqdasdsa.pages.dev/assets/8.png" alt="Gambar informasi 8" loading="lazy">
+
+                <!-- Tombol baru "Hubungi Sekarang" yang diletakkan di atas gambar 8.png -->
+                <a href="https://paketkemitraan.biz.id/p/you-need-mie" class="overlay-button-link button-style-4"
+                    target="_blank" rel="noopener noreferrer" aria-label="Tombol Hubungi Sekarang">
+                    <!-- GANTI URL GAMBAR TOMBOL INI DENGAN GAMBAR ANDA -->
+                    <img src="https://sqdasdsa.pages.dev/assets/button/button 4.png" class="overlay-button-img"
+                        alt="Tombol Hubungi Sekarang">
+                </a>
+            </div>
+            <!-- ======================= AKHIR PERUBAHAN ======================= -->
+
             <img src="https://sqdasdsa.pages.dev/assets/9.png" alt="Gambar informasi 9" loading="lazy">
         </div>
 
     </div> <!-- Akhir dari image-stack-wrapper -->
 
-    <!-- ============== AWAL PENAMBAHAN FLOATING BUTTON ============== -->
-    <a href="https://paketkemitraan.biz.id/p/you-need-mie" class="floating-button" target="_blank"
-        rel="noopener noreferrer">
-        Hubungi Sekarang
-    </a>
-    <!-- ============== AKHIR PENAMBAHAN FLOATING BUTTON ============== -->
+    <!-- ============== PERUBAHAN DI SINI: FLOATING BUTTON SUDAH DIHAPUS ============== -->
+
 
     <script>
         // TIDAK ADA PERUBAHAN PADA JAVASCRIPT
